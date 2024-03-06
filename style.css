@@ -2,5 +2,138 @@
   box-sizing: border-box;
 }
 
+html{
+  font-family: 'Kameron', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+:root{
+  --bg: rgb(222, 219, 218);
+  --bg-content: rgb(238, 238, 238);
+}
+
+body{
+  background-color: var(--bg);
+  display: flex;
+  height: 100vh;
+}
+
+.image{
+  background-image: url(img/black-rock-nick-nice.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 2;
+  position: relative
+}
+
+.logo{
+  align-self: stretch;
+  margin: 20%;
+  opacity: 90%;
+}
+
+.mark-white{
+  background-image: url(img/mark-white.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: calc(200px * 1.2);
+  margin-bottom: 32px;
+}
+
+.logo-white{
+  background-image: url(img/logo-white.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: calc(124px * 1.2);
+
+  
+}
+
+.credit{
+  color: var(--bg-content);
+  opacity: 60%;
+  font-size: .7rem;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.image a:visited{
+  color: var(--bg-content);
+}
+
+.content{
+  flex: 3;
+  position: relative;
+}
+
+.content-wrapper{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.content-wrapper > h1{   /* WE ENCOURAGE YOU*/
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+  width: 80%;
+  margin: 2% auto;
+  text-align: center;
+}
+.content-wrapper > h2{   /*YOU ARE HERE*/
+  font-size: 1.2rem;
+  font-style: italic;
+  width: 50%;
+  margin: 2% ;
+  text-align: center;
+}
+
+#form{
+  background-color: var(--bg-content);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  height: fit-content;
+  margin: auto 0;
+  padding: 24px;
+}
+
+#form h1{    /*JUMP IN*/
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.fields{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field{
+  margin-right: 10%;
+  margin-bottom: 8px;
+  width: 30%;
+}
+
+label{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .8rem;
+  display: block;
+  margin-left: 4px;
+  margin-bottom: 4px;
+}
+
+input{
+  display: block;
+  width: 100%;
+
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 4px;
+  font-size: 1rem;
+}
 
 

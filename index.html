@@ -3,11 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css-reset-meyer.css">
   <link rel="stylesheet" href="style.css">
   <title>Sign-up HTML Form</title>
 </head>
 <body>
   
+  <div class="image">
+    <div class="logo">
+      <div class="mark-white"></div>
+      <div class="logo-white"></div>
+    </div>
+    <div class="credit">
+      <!-- CREDIT TO AUTHOR -->
+      <p>Photo by
+        <a href="https://unsplash.com/@nicknice">
+          Nick Nice
+        </a>
+        on <a href="https://unsplash.com/">
+          Unsplash
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content-wrapper">
+
+      <h1>We encourage you to join our stubborn and supportive community!</h1>
+      <h2>That's why you are here, by the way</h2>
+
+      <form id="form" action="#" method="post">
+        <h1>Jump Right-in!</h1>
+
+        <div class="fields">
+          <div class="field name">
+            <label for="name">First name</label>
+            <input id="name" type="text">
+          </div>
+
+          <div class="field last-name">
+            <label for="last-name">Last name</label>
+            <input id="last-name" type="text">
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email">
+          </div>
+
+          <div class="field tel">
+            <label for="tel">Phone number</label>
+            <input id="tel" type="tel">
+          </div>
+
+          <div class="field password">
+            <label for="password">Password</label>
+            <input id="password" type="password">
+          </div>
+
+          <div class="field password-conf">
+            <label for="password-conf">Passord confirmation</label>
+            <input id="password-conf" type="password">
+          </div>
+
+        </div>
+      </form>
+
+      <button type="submit" form="form">Create My Account</button>
+      <p>Already have an account? <a href="#">Log In</a></p>
+
+    </div>
+  </div>
 
   <script src="script.js"></script>
 
