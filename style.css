@@ -38,7 +38,7 @@ body{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: min(calc(25vh * 1.2), calc(20vw * 1.2));
+  height: min(calc(30vh * 1.2), calc(20vw * 1.2));
   margin-bottom: 32px;
 }
 
@@ -47,7 +47,7 @@ body{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: min(calc(18vh * 1.2), calc(15vw * 1.2));
+  height: min(calc(25vh * 1.2), calc(15vw * 1.2));
 }
 
 .credit{
@@ -59,7 +59,8 @@ body{
   bottom: 2%;
   left: 50%;
   transform: translateX(-50%);
-  width: max-content;
+  width: 35vw;
+  text-align: center;
 }
 
 .image a:visited{
@@ -88,7 +89,7 @@ body{
 }
 
 .content-wrapper > h2{   /*YOU ARE HERE*/
-  font-size: 1.2rem;
+  font-size: calc(1rem + .3vw);
   font-style: italic;
 }
 
@@ -196,7 +197,45 @@ input::after{
 }
 
 
-
+@media (max-width: 700px) {
+  .image{
+    flex: 1;
+  }
+  .fields{
+    flex-direction: column;
+    gap: 4px;
+  }
+  .field{
+    width: 80%;
+  }
+  #form{
+    height: 280px;
+  }
+  #form::before{
+    height: 280px;
+  }
+  input{
+    font-size: 1rem;
+    padding: 1px;
+  }
+  label{
+    font-size: .5rem;
+  }
+  label::after{
+    top: 10px;
+  }
+  #form h1{    /*JUMP IN*/
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  .credit{
+    font-size: .5rem;
+    width: 20vw
+  }
+  .content-wrapper > h1{   /* WE ENCOURAGE YOU*/
+    font-size: calc(1rem + .8vw);
+  }
+}
 
 
 
