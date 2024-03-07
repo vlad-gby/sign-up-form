@@ -315,7 +315,7 @@ input:focus{
   }
   input{
     font-size: 1rem;
-    padding: 1px;
+    padding: 1%;
     margin-top: 2px;
   }
   .tel select{
@@ -357,20 +357,6 @@ input:focus{
     margin-bottom: 0;
   }
 }
-
-/* RESPONSIVE FIELDS */
-
-
-/* 
-Overall UX enhancement 
-
-Make mobile-friendly without changing overall layout
-Password comparison using JS
-Improve tel field UX
-Add :invalid::after to tel and password-conf fields
-Make content-wrapper smaller
-Improve button styling and add event-listeners
-*/
 
 
 
