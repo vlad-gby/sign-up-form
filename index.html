@@ -15,15 +15,17 @@
       <div class="logo-white"></div>
     </div>
     <div class="credit">
+
       <!-- CREDIT TO AUTHOR -->
       <p>Photo by
         <a href="https://unsplash.com/@nicknice">
           Nick Nice
-        </a>
-        on <a href="https://unsplash.com/">
+        </a>on
+        <a href="https://unsplash.com/">
           Unsplash
         </a>
       </p>
+
     </div>
   </div>
 
@@ -38,33 +40,45 @@
 
         <div class="fields">
           <div class="field name">
-            <label for="name">First name</label>
-            <input id="name" type="text">
+            <label>First name
+              <input id="name" type="text" pattern="^[^0-9]+" required>
+            </label>
+            
           </div>
 
           <div class="field last-name">
-            <label for="last-name">Last name</label>
-            <input id="last-name" type="text">
+            <label>Last name
+              <input id="last-name" type="text" required>
+            </label>
           </div>
 
           <div class="field">
-            <label for="email">Email</label>
-            <input id="email" type="email">
+            <label>Email
+              <input id="email" placeholder="example@mail.com" type="email" required>
+            </label>
           </div>
 
           <div class="field tel">
-            <label for="tel">Phone number</label>
-            <input id="tel" type="tel">
+            <label>Phone number
+              <div class="flex-container">
+                <select name="country-code" id="country-code">
+                  <option value="Country" selected>+1</option>
+                </select>
+                <input id="tel" minlength="1" maxlength="13" type="tel">
+              </div>
+            </label>
           </div>
 
           <div class="field password">
-            <label for="password">Password</label>
-            <input id="password" type="password">
+            <label>Password
+              <input id="password" type="password" required>
+            </label>
           </div>
 
           <div class="field password-conf">
-            <label for="password-conf">Passord confirmation</label>
-            <input id="password-conf" type="password">
+            <label>Confirm password
+              <input id="password-conf" type="password" required>
+            </label>
           </div>
 
         </div>
