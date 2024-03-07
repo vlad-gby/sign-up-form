@@ -8,6 +8,11 @@ html{
 :root{
   --bg: rgb(217, 219, 222);
   --bg-content: rgb(238, 238, 238);
+  --bg-btn: rgb(53, 53, 53);
+  --clr-btn: white;
+  --clr-warning: rgb(232, 88, 66);
+
+  --border-input: 1px solid rgb(172, 172, 172);
 
   --font-display: 'Kameron', 'Roboto', Arial, sans-serif;
   --font-body: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -94,7 +99,7 @@ body{
 }
 
 #form{
-  height: 260px;
+  height: 270px;
   margin-top: 7%;
 }
 #form::before{
@@ -105,16 +110,16 @@ body{
   position: absolute;
   z-index: -1;
   width: calc(100% + 48px);
-  height: 260px;
+  height: 268px;
   left: -24px;
-  transform: translateY(-24px);
+  transform: translateY(-16px);
 }
 
 #form h1{    /*JUMP IN*/
   font-size: 1.4rem;
   font-weight: 500;
   font-family: var(--font-body);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .fields{
@@ -138,7 +143,6 @@ label{
   text-wrap: nowrap;
 
   display: block;
-  /* margin-left: 4px; */
   margin-bottom: 4px;
 }
 label::after{
@@ -152,11 +156,55 @@ label::after{
   width: 20px;
   height: 20px;
   right: 4px;
-  top: 14px;
+  top: 21px;
   visibility: hidden;
 }
 label:has(:valid:not(:focus))::after{
   visibility:visible;
+}
+.asterisk{
+  color: var(--clr-warning);
+  visibility: hidden;
+  font-size: .9rem;
+}
+.required{
+  font-size: .7rem;
+  color: var(--clr-warning);
+  margin-bottom: 4px;
+}
+.required .asterisk{
+  visibility: visible;
+}
+label:has(:required) sup{
+  visibility: visible;
+}
+
+.name::after, .last-name::after{
+  content: 'No numbers, please';
+  color: var(--clr-warning);
+  font-size: .7rem;
+  position: absolute;
+  bottom: -8px;
+  visibility: hidden;
+}
+.password::after{
+  content: 'Please, make it longer';
+  color: var(--clr-warning);
+  font-size: .7rem;
+  position: absolute;
+  bottom: -8px;
+  visibility: hidden;
+}
+.email::after{
+  content: 'Please, use correct format';
+  color: var(--clr-warning);
+  font-size: .7rem;
+  position: absolute;
+  bottom: -8px;
+  visibility: hidden;
+}
+.field:has(input:not(:placeholder-shown):not(:focus):invalid)::after{
+  visibility: visible;
 }
 
 .flex-container{
@@ -165,10 +213,13 @@ label:has(:valid:not(:focus))::after{
 .tel select{
   display: block;
   outline: none;
-  border: 1px solid rgb(172, 172, 172);
+  border: var(--border-input);
+  color: rgb(61, 61, 61);
   border-radius: 2px;
   padding: 1px;
-  font-size: .8rem;
+  margin-top: 4px;
+  font-size: .9rem;
+  font-weight: 500;
 }
 
 input{
@@ -176,9 +227,10 @@ input{
   width: 100%;
 
   outline: none;
-  border: 1px solid rgb(172, 172, 172);
+  border: var(--border-input);
   border-radius: 2px;
   padding: 4px;
+  margin-top: 4px;
   font-size: .9rem;
 }
 input:focus{
@@ -192,15 +244,33 @@ input:focus{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
-
-input::after{
-  content: url(img/approved.svg);
-  display: block;
-  width: 10px;
-  height: 10px;
-  z-index: 3;
+::placeholder{
+  font-size: .8rem;
+  opacity: 60%;
 }
 
+.submit{
+  background-color: var(--bg-btn);
+  color: var(--clr-btn);
+  border-radius: 2px;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.have-account a{
+  color: var(--bg-btn);
+  font-size: 1.1rem;
+}
+.have-account a:hover{
+  text-decoration: none;
+}
+.typos{
+  font-size: .8rem;
+  margin-bottom: 12px;
+}
 
 @media (max-width: 700px) {
   .image{
@@ -208,30 +278,36 @@ input::after{
   }
   .fields{
     flex-direction: column;
-    gap: 4px;
+    gap: 0;
   }
   .field{
     width: 80%;
   }
   #form{
     height: 280px;
+    margin-top: 12px;
   }
   #form::before{
     height: 280px;
+    transform: translateY(-8px);
   }
   input{
     font-size: .8rem;
     padding: 1px;
+    margin-top: 2px;
+  }
+  .tel select{
+    margin-top: 2px;
   }
   label{
     font-size: .5rem;
   }
   label::after{
-    top: 10px;
+    top: 18px;
   }
   #form h1{    /*JUMP IN*/
     font-size: 1rem;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
   }
   .credit{
     font-size: .5rem;
@@ -240,7 +316,23 @@ input::after{
   .content-wrapper > h1{   /* WE ENCOURAGE YOU*/
     font-size: calc(1rem + .8vw);
   }
+  .submit{
+    font-size: .8rem;
+    padding: 6px 8px;
+    margin-bottom: 4px;
+  }
+  .typos{
+    font-size: .7rem;
+    margin-bottom: 4px;
+  }
+  .required{
+    font-size: .6rem;
+    margin-bottom: 0;
+  }
 }
+
+
+
 
 
 

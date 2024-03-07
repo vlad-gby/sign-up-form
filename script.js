@@ -70,8 +70,27 @@ text.sort();
 for(let i = 0; i < 39; i++){
   let option = document.createElement('option');
   option.textContent = text[i];
+  if(text[i].includes('+380')){
+    option.setAttribute('selected', true);
+  }
   selector.appendChild(option);
 }
+
+// ADD ASTERISKS
+const inputs = document.querySelectorAll('input');
+
+
+inputs.forEach(input => {
+  if(input.hasAttribute('required', true)){
+    const itsLabel = input.parentElement;
+    const sup = document.createElement('sup');
+    sup.textContent = '*';
+    sup.style.color = 'rgb(232, 88, 66)';
+    console.log(itsLabel.textContent)
+  }
+});
+
+// STYLE SUBMIT BUTTON
 
 
 

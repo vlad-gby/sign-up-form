@@ -37,53 +37,57 @@
 
       <form id="form" action="#" method="post">
         <h1>Jump Right-in!</h1>
+        <p class="required"><sup class="asterisk">*</sup>-required fields</p>
 
         <div class="fields">
           <div class="field name">
-            <label>First name
-              <input id="name" type="text" pattern="^[^0-9]+" required>
+            <label>First name <sup class="asterisk">*</sup>
+              <input id="name" placeholder=" " type="text" pattern="^([^0-9]+)$" required>
             </label>
             
           </div>
 
           <div class="field last-name">
-            <label>Last name
-              <input id="last-name" type="text" required>
+            <label>Last name <sup class="asterisk">*</sup>
+              <input id="last-name" pattern="^([^0-9]+)$" placeholder=" " type="text" required>
             </label>
           </div>
 
-          <div class="field">
-            <label>Email
+          <div class="field email">
+            <label>Email <sup class="asterisk">*</sup>
               <input id="email" placeholder="example@mail.com" type="email" required>
             </label>
           </div>
 
           <div class="field tel">
-            <label>Phone number
-              <select name="country-code" id="country-code">
-                <option disabled selected>Code</option>
-              </select>
-              <input id="tel" minlength="1" maxlength="13" type="tel">
+            <label>Phone number <sup class="asterisk">*</sup>
+              <div class="flex-container">
+                <select name="country-code" id="country-code">
+
+                </select>
+                <input id="tel" minlength="10" placeholder="Should have 10 characters" maxlength="10" type="tel">
+              </div>
             </label>
           </div>
 
           <div class="field password">
-            <label>Password
-              <input id="password" type="password" required>
+            <label>Password <sup class="asterisk">*</sup>
+              <input id="password" placeholder="At least 8 characters long" minlength="8" type="password" required>
             </label>
           </div>
 
           <div class="field password-conf">
-            <label>Confirm password
-              <input id="password-conf" type="password" required>
+            <label>Confirm password <sup class="asterisk">*</sup>
+              <input id="password-conf" placeholder="Remember it well" minlength="8" type="password" required>
             </label>
           </div>
 
         </div>
       </form>
 
-      <button type="submit" form="form">Create My Account</button>
-      <p>Already have an account? <a href="#">Log In</a></p>
+      <p class="typos">Check for typos before clicking :)</p>
+      <button class="submit" type="submit" form="form">Create My Account</button>
+      <p class="have-account">Already have an account? <a href="#">Log In</a></p>
 
     </div>
   </div>
