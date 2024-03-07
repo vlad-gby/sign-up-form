@@ -9,7 +9,6 @@ const countriesStr = `🇨🇳 China +86
 🇧🇷 Brazil +55
 🇳🇬 Nigeria +234
 🇧🇩 Bangladesh +880
-🇷🇺 Russia +7
 🇲🇽 Mexico +52
 🇯🇵 Japan +81
 🇪🇹 Ethiopia +251
@@ -50,16 +49,29 @@ countriesArr.forEach(country => {
 });
 numbers = numbers.map(item => item[0]);
 
-const names = [];
+// const names = [];
+// countriesArr.forEach(country => {
+//   names.push(country.match(/\w+\s\w+|\w+\s/))
+// });
+
+const flags = [];
 countriesArr.forEach(country => {
-  names.push(country.match(/\w+\s\w+|\w+\s/))
+  let flag = country.slice(0, 4);
+  flags.push(flag);
 });
 
-for(let i = 0; i < 40; i++){
-  let option = document.createElement('option');
 
+let text = [];
+for(let i = 0; i < 39; i++){
+  text.push(numbers[i] + ' ' + flags[i]);
 }
- 
+text.sort();
+
+for(let i = 0; i < 39; i++){
+  let option = document.createElement('option');
+  option.textContent = text[i];
+  selector.appendChild(option);
+}
 
 
 

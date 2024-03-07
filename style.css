@@ -164,6 +164,11 @@ label:has(:valid:not(:focus))::after{
 }
 .tel select{
   display: block;
+  outline: none;
+  border: 1px solid rgb(172, 172, 172);
+  border-radius: 2px;
+  padding: 1px;
+  font-size: .8rem;
 }
 
 input{
@@ -215,7 +220,7 @@ input::after{
     height: 280px;
   }
   input{
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 1px;
   }
   label{
