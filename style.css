@@ -8,8 +8,8 @@ html{
 :root{
   --bg: rgb(217, 219, 222);
   --bg-content: rgb(238, 238, 238);
-  --bg-btn: rgb(53, 53, 53);
-  --clr-btn: white;
+  --bg-btn: rgb(50, 50, 50);
+  --clr-btn: rgb(233, 233, 233);
   --clr-warning: rgb(232, 88, 66);
 
   --border-input: 1px solid rgb(172, 172, 172);
@@ -56,7 +56,7 @@ body{
 }
 
 .credit{
-  color: var(--bg-content);
+  color: var(--clr-btn);
   opacity: 70%;
   font-size: .75rem;
   font-family: var(--font-body);
@@ -85,9 +85,9 @@ body{
 }
 
 .content-wrapper > h1{   /* WE ENCOURAGE YOU*/
-  font-size: calc(1rem + 2vw);
+  font-size: calc(.8rem + 2vw);
   font-weight: 550;
-  line-height: 120%;
+  line-height: 110%;
   letter-spacing: .3px;
   width: 90%;
   margin-bottom: .5rem;
@@ -159,7 +159,7 @@ label::after{
   top: 21px;
   visibility: hidden;
 }
-label:has(:valid:not(:focus))::after{
+label:has(input:valid:not(:focus):not(:placeholder-shown))::after{
   visibility:visible;
 }
 .asterisk{
@@ -195,8 +195,24 @@ label:has(:required) sup{
   bottom: -8px;
   visibility: hidden;
 }
+.password-conf::after{
+  content: 'Passwords are different';
+  color: var(--clr-warning);
+  font-size: .7rem;
+  position: absolute;
+  bottom: -8px;
+  visibility: hidden;
+}
 .email::after{
   content: 'Please, use correct format';
+  color: var(--clr-warning);
+  font-size: .7rem;
+  position: absolute;
+  bottom: -8px;
+  visibility: hidden;
+}
+.tel::after{
+  content: 'Should have 10 numbers';
   color: var(--clr-warning);
   font-size: .7rem;
   position: absolute;
@@ -252,7 +268,7 @@ input:focus{
 .submit{
   background-color: var(--bg-btn);
   color: var(--clr-btn);
-  border-radius: 2px;
+  border-radius: 3px;
   border: none;
   font-size: 1.2rem;
   padding: 10px 20px;
@@ -260,6 +276,12 @@ input:focus{
   cursor: pointer;
 }
 
+.credit a{
+  color: var(--clr-btn);
+}
+.credit a:visited{
+  color: var(--clr-btn);
+}
 .have-account a{
   color: var(--bg-btn);
   font-size: 1.1rem;
@@ -284,20 +306,25 @@ input:focus{
     width: 80%;
   }
   #form{
-    height: 280px;
+    height: 47vh;
     margin-top: 12px;
   }
   #form::before{
-    height: 280px;
+    height: 45vh;
     transform: translateY(-8px);
   }
   input{
-    font-size: .8rem;
+    font-size: 1rem;
     padding: 1px;
     margin-top: 2px;
   }
   .tel select{
     margin-top: 2px;
+    font-size: .6rem;
+    padding: 0;
+  }
+  .tel input::placeholder{
+    content: '10 digits';
   }
   label{
     font-size: .5rem;
@@ -311,7 +338,7 @@ input:focus{
   }
   .credit{
     font-size: .5rem;
-    width: 20vw
+    width: 20vw;
   }
   .content-wrapper > h1{   /* WE ENCOURAGE YOU*/
     font-size: calc(1rem + .8vw);
@@ -331,7 +358,19 @@ input:focus{
   }
 }
 
+/* RESPONSIVE FIELDS */
 
+
+/* 
+Overall UX enhancement 
+
+Make mobile-friendly without changing overall layout
+Password comparison using JS
+Improve tel field UX
+Add :invalid::after to tel and password-conf fields
+Make content-wrapper smaller
+Improve button styling and add event-listeners
+*/
 
 
 

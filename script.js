@@ -86,11 +86,46 @@ inputs.forEach(input => {
     const sup = document.createElement('sup');
     sup.textContent = '*';
     sup.style.color = 'rgb(232, 88, 66)';
-    console.log(itsLabel.textContent)
   }
 });
 
 // STYLE SUBMIT BUTTON
+const submit = document.querySelector('.submit');
+
+submit.addEventListener('mouseover', e => {
+  submit.style.boxShadow = 'inset 0px -4px 8px 0px rgba(0, 0, 0, 1)';
+});
+submit.addEventListener('mousedown', e => {
+  submit.style.color = 'rgb(200, 200, 200)';
+});
+submit.addEventListener('mouseup', e => {
+  submit.style.color = 'rgb(255, 255, 255)';
+});
+submit.addEventListener('mouseout', e => {
+  submit.style.boxShadow = 'none';
+});
+
+// PASSWORD COMPARISON
+const passwordField = document.querySelector('#password');
+const passwordConfField = document.querySelector('#password-conf');
 
 
+passwordConfField.addEventListener('blur', e => {
+  if(passwordField.value && passwordConfField.value){
+    if(passwordConfField.value !== passwordField.value){
+      passwordConfField.setCustomValidity('Please, enter identical passwords')
+    }else{
+      passwordConfField.setCustomValidity('')
+    }
+  }
+});
+passwordField.addEventListener('blur', e => {
+  if(passwordField.value && passwordConfField.value){
+    if(passwordConfField.value !== passwordField.value){
+      passwordConfField.setCustomValidity('Please, enter identical passwords')
+    }else{
+      passwordConfField.setCustomValidity('')
+    }
+  }
+});
 
