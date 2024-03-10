@@ -125,7 +125,7 @@ body{
 .fields{
   font-family: var(--font-body);
   display: flex;
-  row-gap: 16px;
+  row-gap: 8px;
   column-gap: 28px;
   flex-wrap: wrap;
 }
@@ -245,7 +245,7 @@ input{
   outline: none;
   border: var(--border-input);
   border-radius: 2px;
-  padding: 4px;
+  padding: 8px;
   margin-top: 4px;
   font-size: .9rem;
 }
@@ -254,10 +254,10 @@ input:focus{
 }
 @keyframes shadowAppear{
   0%{
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.0);
   }
   100%{
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 }
 ::placeholder{
@@ -308,6 +308,7 @@ input:focus{
   #form{
     height: 47vh;
     margin-top: 12px;
+    padding: 0;
   }
   #form::before{
     height: 45vh;
@@ -315,7 +316,7 @@ input:focus{
   }
   input{
     font-size: 1rem;
-    padding: 1%;
+    padding: .1rem;
     margin-top: 2px;
   }
   .tel select{
